@@ -1,0 +1,19 @@
+{
+  "name": "favstapi",
+  "version": "1.0.0",
+  "description": "FavsAPI is a project made with the aim of practice the creation of REST API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Danatts/FavsAPI.git"
+  },
+  "author": "Daniel Arteta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Danatts/FavsAPI/issues"
+  },
+  "homepage": "https://github.com/Danatts/FavsAPI#readme"
+}
