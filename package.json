@@ -4,7 +4,8 @@
   "description": "FavsAPI is a project made with the aim of practice the creation of REST API.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -21,10 +22,12 @@
     "mongoose": "^6.3.2"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.0",
     "eslint": "^8.15.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.16"
   }
 }
