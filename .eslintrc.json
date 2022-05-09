@@ -12,7 +12,9 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        "global-require": "warn",
-        "import/no-extraneous-dependencies": "warn"
+        "global-require": "off",
+        "import/no-extraneous-dependencies": "off",
+        "no-console": "off",
+        "arrow-body-style": "off"
     }
 }
