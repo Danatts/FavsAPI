@@ -1,14 +1,17 @@
 const express = require('express');
-const app = express();
 const configExpress = require('./config/express');
 const connectDB = require('./config/database');
+const routes = require('./utils/routes');
+
+const app = express();
 
 // Configuration
 configExpress(app);
 connectDB(process.env.MONGO_DB_URI);
+routes(app);
 
 app.get('/', (req, res) => {
-  res.send('Favs API');
+  res.send('<h1>FavsAPI</h1>');
 });
 
 module.exports = { app };
