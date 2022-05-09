@@ -1,4 +1,5 @@
 {
+    "root": true,
     "env": {
         "commonjs": true,
         "es2021": true,
@@ -11,5 +12,7 @@
         "ecmaVersion": "latest"
     },
     "rules": {
+        "global-require": "warn",
+        "import/no-extraneous-dependencies": "warn"
     }
 }
