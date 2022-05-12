@@ -1,14 +1,11 @@
-const mongoose = require('mongoose');
-
-const { Schema, model } = mongoose;
+const { Schema, model } = require('mongoose');
 
 const favSchema = new Schema({
   name: String,
-  favs: [{
-    title: String,
-    desc: String,
-    link: String,
-  }],
+  favs: [{ 
+    type: Schema.Types.ObjectId,
+    ref: 'Item'
+  }]
 }, {
   timestamps: true,
   versionKey: false,

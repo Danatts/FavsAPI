@@ -7,7 +7,7 @@ const {
   handleGetFavById,
   handleCreateFav,
   handleDeleteFavById,
-  handleUpdateFavById,
+  handleUpdateFavById
 } = require('./favs.controller');
 
 router.route('/')
