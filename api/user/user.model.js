@@ -1,13 +1,13 @@
-const mongoose = require('mongoose');
-
-const { Schema, model } = mongoose;
+const { Schema, model } = require('mongoose');
 
 const userSchema = new Schema({
   name: String,
-  last: String,
   email: String,
   password: String,
-  lists: [],
+  lists: [{
+    type: Schema.Type.ObjectId,
+    ref: 'Fav',
+  }],
 }, {
   timestamps: true,
   versionKey: false,

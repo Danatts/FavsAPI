@@ -43,9 +43,9 @@ const handleGetFavById = async (req, res) => {
  * ! Access: Public
  */
 const handleCreateFav = async (req, res) => {
-  const fav = req.body;
+  const { body } = req;
   try {
-    const response = await createFav(fav);
+    const response = await createFav(body);
     res.status(201).json(response);
   } catch (err) {
     console.log(err);
