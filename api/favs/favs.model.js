@@ -1,10 +1,16 @@
 const { Schema, model } = require('mongoose');
 
 const favSchema = new Schema({
-  name: String,
-  favs: [{ 
+  name: {
+    type: String,
+    require: true,
+    trim: true,
+    unique: true,
+  },
+  items: [{ 
     type: Schema.Types.ObjectId,
-    ref: 'Item'
+    ref: 'Item',
+    trim: true,
   }]
 }, {
   timestamps: true,

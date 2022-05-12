@@ -1,12 +1,24 @@
 const { Schema, model } = require('mongoose');
 
 const itemSchema = new Schema({
-  title: String,
-  desc: String,
-  link: String,
+  title: {
+    type: String,
+    trim: true,
+    require: true,
+  },
+  desc: {
+    type: String,
+    trim: true,
+  },
+  link: {
+    type: String,
+    trim: true,
+  },
   favList: {
     type: Schema.Types.ObjectId,
     ref: 'Fav',
+    require: true,
+    trim: true,
   } 
 }, {
   timestamps: true,

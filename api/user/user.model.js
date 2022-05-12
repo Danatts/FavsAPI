@@ -1,12 +1,26 @@
 const { Schema, model } = require('mongoose');
 
 const userSchema = new Schema({
-  name: String,
-  email: String,
-  password: String,
+  name: {
+    require: true,
+    trim: true,
+    type: String,
+  },
+  email: {
+    require: true,
+    trim: true,
+    type: String,
+    unique: true,
+  },
+  password: {
+    require: true,
+    trim: true,
+    type: String,
+  },
   lists: [{
-    type: Schema.Type.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: 'Fav',
+    trim: true,
   }],
 }, {
   timestamps: true,

@@ -14,10 +14,10 @@ const {
 const handleGetAllFavs = async (req, res) => {
   try {
     const response = await getAllFavs();
-    res.status(200).json(response);
+    return res.status(200).json(response);
   } catch (err) {
     console.log(err);
-    res.status(400).json({ message: 'Error' });
+    return res.status(400).json({ message: 'Error' });
   }
 };
 
@@ -30,10 +30,10 @@ const handleGetFavById = async (req, res) => {
   const { id } = req.params;
   try {
     const response = await getFavById(id);
-    res.status(200).json(response);
+    return res.status(200).json(response);
   } catch (err) {
     console.log(err);
-    res.status(400).json({ message: 'Error' });
+    return res.status(400).json({ message: 'Error' });
   }
 };
 
@@ -45,11 +45,14 @@ const handleGetFavById = async (req, res) => {
 const handleCreateFav = async (req, res) => {
   const { body } = req;
   try {
+    if (!body.name) {
+      return res.status(400).json({ message: 'name value is null' })
+    }
     const response = await createFav(body);
-    res.status(201).json(response);
+    return res.status(201).json(response);
   } catch (err) {
     console.log(err);
-    res.status(400).json({ message: 'Error' });
+    return res.status(400).json({ message: 'Error' });
   }
 };
 
@@ -62,10 +65,10 @@ const handleDeleteFavById = async (req, res) => {
   const { id } = req.params;
   try {
     await deleteFavById(id);
-    res.status(200).json({ message: 'List deleted successfully' });
+    return res.status(200).json({ message: 'List deleted successfully' });
   } catch (err) {
     console.log(err);
-    res.status(400).json({ message: 'Error' });
+    return res.status(400).json({ message: 'Error' });
   }
 };
 
@@ -79,10 +82,10 @@ const handleUpdateFavById = async (req, res) => {
   const { body } = req;
   try {
     const response = await updateFavById(id, body);
-    res.status(200).json(response);
+    return res.status(200).json(response);
   } catch (err) {
     console.log(err);
-    res.status(400).json({ message: 'Error' });
+    return res.status(400).json({ message: 'Error' });
   }
 };
 
