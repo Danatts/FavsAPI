@@ -1,15 +1,15 @@
 const FavModel = require('./favs.model');
 
 const getAllFavs = () => {
-  return FavModel.find({});
+  return FavModel.find({}).populate({ path: 'items', select: 'title' });
 };
 
 const getFavById = (id) => {
-  return FavModel.findById(id);
+  return FavModel.findById(id).populate({ path: 'items', select: 'title' });
 };
 
-const createFav = (fav) => {
-  return FavModel.create(fav);
+const createFav = (body) => {
+  return FavModel.create(body);
 };
 
 const deleteFavById = (id) => {

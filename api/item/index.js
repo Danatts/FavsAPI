@@ -6,7 +6,7 @@ const {
   handleCreateItem,
 } = require('./item.controller');
 
-router.route('/:id')
+router.route('/')
   .post(handleCreateItem);
 
 module.exports = router;
