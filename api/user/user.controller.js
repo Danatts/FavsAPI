@@ -3,8 +3,8 @@ createUser,
 } = require('./user.service');
 
 /**
- * ! Route: POST api/user
- * ! Desc: Create an user
+ * ! Route: POST api/user/signup
+ * ! Desc: Registrer an user
  * ! Access: Public
  */
 
