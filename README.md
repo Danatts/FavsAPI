@@ -22,7 +22,7 @@ provided a list of functional requirements.
 email and a password.
 2. Each user will be able to save a list of favs. Each fav will have an title,
 description and link, and each list will be defined by a unique id and a name.
-3. The system have to allow the following actions
+3. The system have to allow the following actions:
   - Create a new list with a given name (auto-generate the unique id)
   - Get the users lists
   - Get an individual list for the user
