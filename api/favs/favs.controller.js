@@ -44,11 +44,14 @@ const handleGetFavById = async (req, res) => {
  */
 const handleCreateFav = async (req, res) => {
   const { body } = req;
+  const { user  } = req;
   try {
     if (!body.name) {
       return res.status(400).json({ message: 'name value is null' })
     }
     const response = await createFav(body);
+    user.lists.push(response._id);
+    await user.save()
     return res.status(201).json(response);
   } catch (err) {
     console.log(err);
