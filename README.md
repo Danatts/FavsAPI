@@ -34,7 +34,7 @@ description and link, and each list will be defined by a unique id and a name.
 
 | Route | Verb | Middleware | Description | Required body data |
 | - | - | - | - | - |
-| /api/favs | GET | isAuth() | Get all own favorites lists | - |
+| /api/favs | GET | isAuth() | Get all user favorites lists | - |
 | /api/favs | POST | isAuth() | Create a new favorites list | name: String |
 | /api/favs/:id | GET | isAuth() | Get a single favorite list by it id | - |
 | /api/favs/:id | DELETE | isAuth() | Delete a single favorite list by it id | - |
