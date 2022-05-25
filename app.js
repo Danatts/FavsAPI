@@ -7,7 +7,7 @@ const app = express();
 
 // Configuration
 configExpress(app);
-connectDB(process.env.MONGO_DB_URI);
+connectDB();
 routes(app);
 
 app.get('/', (req, res) => {

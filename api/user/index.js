@@ -6,7 +6,7 @@ const {
   handleCreateUser
 } = require('./user.controller');
 
-router.route('/signup')
+router.route('/')
   .post(handleCreateUser);
 
 module.exports = router;

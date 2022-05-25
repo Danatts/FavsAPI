@@ -4,8 +4,10 @@
   "description": "FavsAPI is a project made with the aim of practice the creation of REST API.",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node index.js",
-    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "NODE_ENV=test jest",
+    "test:watch": "jest --watch",
     "lint:check": "eslint ."
   },
   "repository": {
@@ -33,6 +35,7 @@
     "eslint-plugin-import": "^2.26.0",
     "jest": "^28.1.0",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3"
   }
 }

@@ -1,7 +1,4 @@
-// Dev variables
-if (process.env.NODE_ENV === 'development') {
-  require('dotenv').config();
-}
+require('dotenv').config();
 
 // APP
 const { app } = require('./app');
