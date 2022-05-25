@@ -1,7 +1,7 @@
 require('dotenv').config();
 const supertest = require('supertest');
 const mongoose = require('mongoose');
-const app = require('../../app');
+const { app } = require('../../app');
 const connectDB = require('../../config/database');
 const user = require('./user.model');
 
@@ -21,11 +21,20 @@ describe('User Endpoints', () => {
     const res = await request
       .post('/api/user/')
       .send({
+        name: 'Daniel Test',
         email: 'danieltest@test.com',
         password: '1234',
       });
-
     expect(res.statusCode).toEqual(201);
-    expect(res.body).toHaveProperty('_id');
+  });
+
+  test('should return an error message', async () => {
+    const res = await request
+      .post('/api/user')
+      .send({
+        email: 'danieltest@test.com',
+        password: '1234',
+      });
+    expect(res.statusCode).toEqual(400);
   });
 });

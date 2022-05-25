@@ -7,6 +7,12 @@ const favSchema = new Schema({
     trim: true,
     unique: true,
   },
+  creator: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    require: true,
+    trim: true,
+  },
   items: [{ 
     type: Schema.Types.ObjectId,
     ref: 'Item',

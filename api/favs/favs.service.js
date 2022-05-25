@@ -1,7 +1,7 @@
 const FavModel = require('./favs.model');
 
-const getAllFavs = () => {
-  return FavModel.find({}).populate({ path: 'items', select: 'title' });
+const getAllOwnFavs = (id) => {
+  return FavModel.find({ creator: id }).populate({ path: 'items', select: 'title' });
 };
 
 const getFavById = (id) => {
@@ -21,7 +21,7 @@ const updateFavById = (id, body) => {
 };
 
 module.exports = {
-  getAllFavs,
+  getAllOwnFavs,
   getFavById,
   createFav,
   deleteFavById,

@@ -1,5 +1,5 @@
 const {
-  getAllFavs,
+  getAllOwnFavs,
   getFavById,
   createFav,
   deleteFavById,
@@ -8,12 +8,13 @@ const {
 
 /**
  * ! Route: GET api/favs
- * ! Desc: Get all favorites lists
+ * ! Desc: Get all own favorites lists
  * ! Access: Private
  */
-const handleGetAllFavs = async (req, res) => {
+const handleGetAllOwnFavs = async (req, res) => {
+  const { _id } = req.user;
   try {
-    const response = await getAllFavs();
+    const response = await getAllOwnFavs(_id);
     return res.status(200).json(response);
   } catch (err) {
     console.log(err);
@@ -40,16 +41,16 @@ const handleGetFavById = async (req, res) => {
 /**
  * ! Route: POST api/favs
  * ! Desc: Post a new favorite list
- * ! Access: Public
+ * ! Access: Private
  */
 const handleCreateFav = async (req, res) => {
   const { body } = req;
-  const { user  } = req;
+  const { user } = req;
   try {
     if (!body.name) {
       return res.status(400).json({ message: 'name value is null' })
     }
-    const response = await createFav(body);
+    const response = await createFav({...body, creator: user._id});
     user.lists.push(response._id);
     await user.save()
     return res.status(201).json(response);
@@ -93,7 +94,7 @@ const handleUpdateFavById = async (req, res) => {
 };
 
 module.exports = {
-  handleGetAllFavs,
+  handleGetAllOwnFavs,
   handleGetFavById,
   handleCreateFav,
   handleDeleteFavById,

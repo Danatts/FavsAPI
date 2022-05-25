@@ -5,7 +5,7 @@ const router = express.Router();
 const { isAuth } = require('../../auth/auth.service');
 
 const {
-  handleGetAllFavs,
+  handleGetAllOwnFavs,
   handleGetFavById,
   handleCreateFav,
   handleDeleteFavById,
@@ -13,7 +13,7 @@ const {
 } = require('./favs.controller');
 
 router.route('/')
-  .get(isAuth(), handleGetAllFavs)
+  .get(isAuth(), handleGetAllOwnFavs)
   .post(isAuth(), handleCreateFav);
 
 router.route('/:id')
