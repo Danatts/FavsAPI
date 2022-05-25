@@ -3,7 +3,7 @@ const { signToken } = require("./auth.service");
 
 /**
  * ! Route: POST auth/local/login
- * ! Desc: Check if the email is registred and return and authentication token
+ * ! Desc: Check if the email is registered and return and authentication token
  * ! Access: Public
  */
 
