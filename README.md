@@ -40,5 +40,6 @@ description and link, and each list will be defined by a unique id and a name.
 | /api/favs/:id | DELETE | isAuth() | Delete a single favorite list by it id | - |
 | /api/favs/:id | PATCH | isAuth() | Update a single favorite list by it id | - |
 | /api/item | POST | isAuth() | Create a new item and insert it into the given id list | title: String, desc: String, link: String, favList: Object_id |
+| /api/user | GET | isAuth() | Get all users | - |
 | /api/user | POST | none | Create an user | name: String, email: String, password: String |
 | /auth/local/login | POST | none | Check if a user is already registered and return an authentication token | email: String, password: String |
